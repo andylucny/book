@@ -1,0 +1,177 @@
+Numpy is a Python library similar to Matlab
+It enables to work with multi-dimensional array without use of loops what is very important
+since in Python, using loops for processing objects like images is very slow.
+
+numpy is typically imported into Python as follows:
+import numpy as np
+
+numpy array can be created from analogical structure of Python lists and specified type:
+a = np.array([[1,2],[3,4]],np.float32)
+a
+print(a)
+
+and can be indexed as array
+a[0,1]
+a[-1,-1]
+
+row can be accessed by
+a[1]
+
+column
+a[:,1]
+
+dimensions can be got
+a.shape
+number of rows is a.shape[0]
+number of columns is a.shape[1]
+
+each array has a type (np.int, np.uint8, np.float32)
+a.dtype
+
+and the type can be modified:
+b = np.asarray(a,np.int)
+b
+b = a.astype(np.int)
+b
+
+array can be created also from array
+c = np.array([a,b,b])
+c 
+array can be reshaped
+d = a.reshape((1,4,1))
+d
+the easiest reshape is flattening
+d = np.reshape(a,-1)
+d
+expand dimension
+np.expand_dims(a,axis=2)
+
+alternative flattening equivalent to np.reshape(a,-1)
+a.reshape(-1)
+a.ravel()
+np.ravel(a)
+a.flatten()
+
+reverse
+a.flatten()[::-1]
+
+array can be created from zeros, ones, ones on diagonal, 
+np.zeros((3,3),np.float)
+np.ones((3,3),np.int)
+np.eye(3)
+from a constant
+np.full((3,3),3)
+as a sequence
+v = np.arange(5)
+randomly
+np.random.uniform(0,1,(3,3))
+
+sharing of array 
+b = a 
+b[0,0]=0
+a[0,0]
+
+copy of array
+b = np.copy(a)  or  b = a.copy()
+b[1,1]=1
+a[1,1]
+
+add, subtract, multiply, divide by constant
+c = a + 2
+c = a - 2
+c = a * 2
+c = a / 2
+square each item
+a ** 2
+np.power(a,2)
+exponential
+2 ** a
+np.exp(a*np.log(2)) 
+binary logarithm
+np.log(a) / np.log(2)
+logarithm from 0 is -inf
+
+add, subtract, multiply, divide by array
+c = a + b
+c = a - b
+c = a * b
+c = a / b
+division by zero is nan
+
+boolean arrays
+a > 1
+values = a[a > 1]
+b[a == 2] = 4 
+replace of nan by zero
+c[c!=c]=0
+
+scalar multiplication
+np.dot(v,v)
+
+transposition 
+v = np.array([v])
+v
+v.T
+np.transpose(v)
+
+matrix multiplication
+v @ v.T
+v.T @ v
+a @ a
+np.dot(a,a)
+np.matmul(a,a)
+
+maximum, minimum
+np.max(a)
+np.min(a)
+
+maximum in rows
+np.max(a,axis=1)
+maximum in columns
+np.max(a,axis=0)
+
+index of maximum
+np.argmax(a,axis=0)
+
+indices of holding a condition        
+indices = np.argwhere(a >= 2)
+
+sum
+a.sum()
+np.sum(a)
+cumulative sum
+np.cumsum(a)
+
+average
+v.mean()
+np.mean(v)
+deviation 
+v.std()
+normalization
+(v-v.mean())/v.std()
+
+matrix rotation
+np.roll(a,1,axis=0)
+
+apply boundary or low and high values
+np.clip(a,1,2)
+
+concatenation
+np.concatenate((a,a), axis=0)
+np.hstack((a,a))
+np.vstack((a,a))
+
+numpy has many parts: linalg (linear algebra), fft (Furier transform), ... 
+
+e.g. norm of vector is np.linalg.norm(v)
+
+opencv (cv2) is python library for computer vision
+gray image is represented as 2D numpy array (rows,columns)
+gray = cv2.imread("filename.png",cv2.IMREAD_GRAYSCALE)
+color image is represented as 3D numpy arrays (rows,columns,channels)
+bgr = cv2.imread("filename.png",cv2.IMREAD_COLOR)
+
+image can be shown by
+cv2.imshow('title',bgr)
+cv2.waitKey(0)
+

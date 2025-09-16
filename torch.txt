@@ -1,0 +1,166 @@
+Torch a Python library similar to numpy but implement also autograd capabilities
+Unlike numpy array, tensor from torch can be used not only for routine calculation (forward pass)
+but also for automatic calculation of gradients corresponding to that calculation (backward pass)
+ 
+It enables to work with tensors (multi-dimensional arrays) without use of loops 
+what is very important since in Python, using loops for processing objects 
+like weights of neural network is very slow.
+
+torch is typically imported into Python as follows:
+import torch
+
+tensor can be created from analogical structure of Python lists and specified type:
+a = torch.tensor([[1,2],[3,4]],dtype=torch.float32)
+a
+print(a)
+
+and can be indexes as array
+a[0,1]
+a[-1,-1]
+
+row can be accessed by
+a[1]
+
+column
+a[:,1]
+
+dimensions can be got
+a.shape
+number of rows is a.shape[0]
+number of columns is a.shape[1]
+
+tensor can be create also from the numpy array
+import numpy as np
+aa = np.array([[1,2],[3,4]],np.float32)
+a = torch.from_numpy(aa)
+aa_ = a.detach().numpy()
+
+each tensor has a type (torch.int64, torch.float32)
+a.dtype
+
+#np.function(arg)
+#troch.function(arg) == arg.function()
+
+and the type can be modified:
+b = a.int()
+b
+
+tensor can be reshaped
+d = a.reshape((1,4,1))
+d
+the easiest reshape is flattening
+d = torch.flatten(a)
+d
+expand dimension
+e = a.unsqueeze(2)
+a = e.squeeze(2)
+
+a.unsqueeze(-1).unsqueeze(0).squeeze(-1).unsqueeze(1).view(2,2).contiguous()
+
+tensor can be created from zeros, ones, ones on diagonal, 
+torch.zeros((3,3),dtype=torch.float)
+torch.ones((3,3))
+torch.eye(3)
+from a constant
+torch.full((3,3),3)
+as a sequence
+v = torch.arange(5)
+randomly
+torch.randn(3, 3)
+
+sharing of tensors
+b = a 
+b[0,0]=0
+a[0,0]
+
+copying of tensors
+b = a.clone()
+b[1,1]=1
+a[1,1]
+
+add, subtract, multiply, divide by constant
+c = a + 2
+c = a - 2
+c = a * 2
+c = a / 2
+square each item
+a ** 2
+exponential
+2 ** a
+from math import log
+torch.exp(a)
+torch.log(a) 
+logarithm from 0 is -inf
+unlike numpy, torch math function can be applied only on tensors, not scalars
+
+add, subtract, multiply, divide by tensors
+c = a + b
+c = a - b
+c = a * b
+c = a / b
+division by zero is nan
+
+boolean arrays
+a > 1
+values = a[a > 1]
+b[a == 2] = 4 
+replace of nan by zero
+c[c!=c]=0
+
+scalar multiplication
+torch.dot(v,v)
+
+transposition 
+v = v.unsqueeze(0)
+v
+v.T
+v.t()
+
+matrix multiplication
+v @ v.T
+v.T @ v
+a @ a
+torch.matmul(a,a)
+
+maximum, minimum
+torch.max(a)
+torch.min(a)
+but also
+a.max()
+a.min()
+
+maximum in rows
+torch.max(a,axis=1)[0]
+maximum in columns
+torch.max(a,axis=0)[0]
+
+index of maximum
+torch.max(a,axis=0)[1]
+
+sum
+a.sum()
+torch.sum(a)
+
+average
+v=v.float() # only floats
+v.mean()
+torch.mean(v)
+deviation 
+v.std()
+normalization
+(v-v.mean())/v.std()
+
+matrix rotation
+torch.roll(a,1,dims=(0))
+
+apply boundary or low and high values
+torch.clamp(a,1,2)
+
+concatenation
+torch.cat((a,a), 0)
+
+stack
+torch.stack((a,a))
+
+torch does not contain linear algebra, fft, ...
+e.g. norm of vector is torch.norm(v)
