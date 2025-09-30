@@ -13,11 +13,17 @@ Open [Google Colab](https://colab.research.google.com/)
 6. Go to **Runtime → Change runtime type (Zmeniť typ prostredia) → T4 GPU**
 7. Press **Ctrl+Enter** to run cells
 
+or
+
+1. click on "Run on Colab"
+2. Go to **Runtime → Change runtime type (Zmeniť typ prostredia) → T4 GPU**
+3. Press **Ctrl+Enter** to run cells
+
 ---
 
 # How to stop
 
-1. Runtime / Manage sessions (Spravovať relácie) / Cancel (Zruš)
+1. Runtime / Manage sessions (Spravovať relácie) / Stop (Ukončit)
 
 ---
 
