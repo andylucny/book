@@ -15,6 +15,12 @@ Open [Google Colab](https://colab.research.google.com/)
 
 ---
 
+# How to stop
+
+1. Runtime / Manage sessions (Spravovať relácie) / Cancel (Zruš)
+
+---
+
 # How to Convert
 
 ### Jupyter → Python
