@@ -15,7 +15,7 @@ Open [Google Colab](https://colab.research.google.com/)
 
 or
 
-1. click on "Run on Colab"
+1. click on "Open in Colab" inside directories 01..., 02... , ...
 2. Go to **Runtime → Change runtime type (Zmeniť typ prostredia) → T4 GPU**
 3. Press **Ctrl+Enter** to run cells
 
