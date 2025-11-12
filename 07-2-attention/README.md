@@ -1,0 +1,2 @@
+1. Visualization of Attention [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/andylucny/book/blob/master/07-2-attention/attention.ipynb)
+2. Associations via Attention [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/andylucny/book/blob/master/07-2-attention/association.ipynb)
