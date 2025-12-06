@@ -1,0 +1,2 @@
+1. DINO (in details) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/andylucny/book/blob/master/10-1-dino/dino-in-details.ipynb)
+2. DINO (follow anything) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/andylucny/book/blob/master/10-1-dino/dino-follow-anything.ipynb)
