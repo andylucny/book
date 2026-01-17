@@ -1,0 +1,1 @@
+1. convolutional variational autoencoder [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/andylucny/book/blob/master/03-2-autoencoder/cvae.ipynb)
