@@ -1,0 +1,1 @@
+1. DocTR OCR (CNN+RNN), in details [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/andylucny/book/blob/master/11-1-DocTR/ocr-cnn-rnn.ipynb)
