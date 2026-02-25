@@ -1,0 +1,1 @@
+1. DeepSeek OCR (Transformer+Prompt) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/andylucny/book/blob/master/11-2-DeepSeekOCR/deepseek-ocr.ipynb)
